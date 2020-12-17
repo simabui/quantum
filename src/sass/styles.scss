@@ -1,0 +1,14 @@
+@import 'helpers/mixins';
+@import 'helpers/variables';
+@import 'helpers/placeholders';
+
+@import 'base/normalize';
+@import 'base/base';
+@import 'base/fonts';
+
+@import 'components/header';
+@import 'components/main';
+@import 'components/policy';
+@import 'components/agreement';
+@import 'components/counter';
+@import 'components/footer';

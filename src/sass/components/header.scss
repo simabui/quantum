@@ -1,0 +1,16 @@
+header {
+  background-color: $main-color;
+  padding: 10px 0 5px;
+  border-bottom: 1px solid #66717e;
+  margin-bottom: 15px;
+}
+.header {
+  &__title {
+    font-size: 22px;
+  }
+}
+
+.logo {
+  max-width: 230px;
+  margin: 5px;
+}

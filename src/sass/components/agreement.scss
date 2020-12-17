@@ -1,0 +1,13 @@
+table#agreement tr th:nth-child(odd),
+table#agreement tr td:nth-child(odd) {
+  width: 70%;
+}
+table#agreement tr th:nth-child(even),
+table#agreement tr td:nth-child(even) {
+  width: 30%;
+  text-align: center;
+}
+
+.small {
+  font-size: 85%;
+}

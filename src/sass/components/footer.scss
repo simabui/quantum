@@ -1,0 +1,28 @@
+footer {
+  background-color: $main-color;
+  padding: 13px 0;
+  border-top: 1px solid #66717e;
+}
+
+.footer {
+  &__list {
+    text-align: center;
+  }
+
+  &__item {
+    display: inline-block;
+    padding: 3px 10px;
+
+    a {
+      color: $default-font-color;
+      font-size: 0.8em;
+    }
+  }
+}
+
+.copyright {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 0.8em;
+  color: $default-font-color;
+}

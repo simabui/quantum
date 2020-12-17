@@ -1,0 +1,11 @@
+'use strict';
+import './../sass/styles.scss';
+import '../images/logo.png';
+import '../images/trusted/trusted-1.png';
+import '../images/trusted/trusted-2.png';
+import '../images/trusted/trusted-3.png';
+import '../images/trusted/trusted-4.png';
+import '../images/trusted/trusted-5.png';
+import '../videos/video1.mp4';
+import './video';
+import './counter';

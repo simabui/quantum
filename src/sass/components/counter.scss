@@ -1,0 +1,86 @@
+.pin {
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 68px;
+  font-family: $pin-font;
+  font-size: 2em;
+  line-height: 58px;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 3px;
+}
+.labels {
+  margin: 7px 0;
+  border-radius: 8px;
+  border: 2px dashed;
+  font-weight: 400;
+  color: #fff;
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.online {
+  position: fixed;
+  bottom: 15px;
+  left: 10px;
+  width: 170px;
+  height: 68px;
+  z-index: 500;
+
+  @include md() {
+    display: none;
+  }
+
+  .pin {
+    left: 0;
+    background: url('../images/pin/pin-online.png') 50% 50% no-repeat;
+    color: #17d4fb;
+  }
+
+  .labels {
+    border-color: #17d4fb;
+    padding-left: 35px;
+    margin-left: 30px;
+
+    span {
+      color: #17d4fb;
+    }
+  }
+}
+
+.slots {
+  position: fixed;
+  bottom: 15px;
+  right: 10px;
+  width: 170px;
+  height: 68px;
+  z-index: 500;
+
+  @include md() {
+    display: none;
+  }
+
+  .pin {
+    right: 0;
+    background: url('../images/pin/pin-slots.png') 50% 50% no-repeat;
+    color: #11cc1a;
+  }
+
+  .labels {
+    border-color: #11cc1a;
+    padding-right: 35px;
+    margin-right: 30px;
+
+    span {
+      color: #11cc1a;
+    }
+  }
+}
+
+.labels {
+  span {
+    font-weight: 700;
+  }
+}
