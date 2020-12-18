@@ -41,8 +41,8 @@ module.exports = {
       canPrint: true,
     }),
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      template: './src/index.pug',
+      filename: 'main.html',
+      template: './src/main.pug',
       scriptLoading: 'defer',
       minify: {
         collapseWhitespace: true,
