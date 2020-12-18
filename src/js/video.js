@@ -1,8 +1,10 @@
 const volume = document.querySelector('.video__volume');
 const video = document.querySelector('video');
+const main = document.querySelector('.main-section');
+const registry = document.querySelector('.registry-section');
 
 function videoPlay() {
-  if (!document.querySelector('.main-section')) return;
+  if (!main && !registry) return;
 
   volume.addEventListener('click', handleVolume);
 

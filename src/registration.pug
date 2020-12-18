@@ -1,0 +1,145 @@
+extends pug/layout
+
+block variables
+  - var titleVar = 'Регистрация - Quantum System'
+
+block content
+  section.registry-section
+    .container
+      .row
+        include pug/components/video
+        +video('videos/video2.mp4')(class='col-xs-12 col-sm-8 offset-sm-2')
+      .row
+        .col-xs-12.col-sm-10.offset-sm-1
+          h2.nomargin 
+            | 1 ШАГ : 
+            span Создайте учетную запись Quantum System прямо сейчас
+      .row
+        .hidden-sm.col-sm-1.offset-md-1.offset-lg-2.arr-left
+        .col-xs-12.col-sm-10.col-md-8.col-lg-6
+          form.reg-form
+            .row
+              .col-xs-12.col-sm-6
+                include pug/components/input
+                +input('text','firstname','Имя','true')(class='name')
+              .col-xs-12.col-sm-6
+                +input('text','lastname','Фамилия','true')(class='name')
+              .col-xs-12.col-sm-6
+                +input('email','email','Email','true')(class='mail')
+              .col-xs-12.col-sm-6
+                include pug/components/input-tel
+                +inputTel
+              .col-xs-12 
+                span.form__text
+                  | Нажимая "Получить доступ", вы подтверждаете, что ознакомились и полностью понимаете 
+                  a(href='/agreement.html' target='_blank' rel='noopener') Правила Пользования 
+                  | системой «Quantum System» и выражаете свое согласие с ними.
+                include pug/components/button
+                +button('Получить доступ')
+        .hidden-sm.col-sm-1.arr-right
+  section
+    .container
+      .row
+        .col-xs-12.col-sm-10.col-md-8.offset-sm-1.offset-md-2.text-center
+          include pug/components/verify
+      .row.step-arrows
+        .col-xs-12.col-sm-6.col-md-3.text-center
+          img(src='./images/step-1.png' class='step' alt='Quantum System')
+          | Зарегистрируйтесь
+        .col-xs-12.col-sm-6.col-md-3.text-center.active
+          img(src='./images/step-2.png' class='step' alt='Quantum System')
+          | Создайте учетную запись
+        .col-xs-12.col-sm-6.col-md-3.text-center
+          img(src='./images/step-3.png' class='step' alt='Quantum System')
+          | Получите доступ к программе
+        .col-xs-12.col-sm-6.col-md-3.text-center
+          img(src='./images/step-4.png' class='step' alt='Quantum System')
+          | Готово!
+          br
+          | Получайте прибыль!
+  section
+    .container
+      .row
+        .col-xs-12.col-sm-10.offset-sm-1.text-center
+          h1 ПОЗДРАВЛЯЮ! ВЫ СДЕЛАЛИ ЭТО!
+        .col-xs-12.col-sm-10.offset-sm-1.text-center
+          .photo
+            img(src='images/vip-photo.png')
+      .row
+        .hidden-xs.col-sm-1.quot-open
+        .col-xs-12.col-sm-10.text-center
+          .vip-comment
+            .teaser ДОБРО ПОЖАЛОВАТЬ В QUANTUM SYSTEM
+        .hidden-xs.col-sm-1.quot-close
+  section
+    .container
+      .row
+        .col-xs-12
+          h3 РЕАЛЬНЫЕ ОТЗЫВЫ ОТ ДЕЙСТВУЮЩИХ ПОЛЬЗОВАТЕЛЕЙ QUANTUM SYSTEM:
+        include pug/components/reviews
+        +review('Виктор Капенков','viktor','67360$')(class='offset-md-1')
+        +review('Сергей Попов','sergey','193420$')
+  section.data2
+    .container
+      .row
+        .col-xs-12.col-sm-10.offset-sm-1
+          h1 КАК ЭТО РАБОТАЕТ?
+          .video-wrapper.mid
+            .video__embed
+              video(width='620' height='370' controls='true')
+                source(src='videos/video3.mp4' type='video/mp4')
+    .spacer
+  section
+    .container
+      .row
+        .col-xs-12
+          h1 ПОМОЩЬ И ПОДДЕРЖКА
+          h2 МЫ ОТВЕТИМ НА ВАШИ ВОПРОСЫ И ПОМОЖЕМ ЗАРАБОТАТЬ ДЕНЬГИ
+        .col-xs-12.col-sm-10.offset-sm-1.col-md-8.offset-md-2
+          include pug/components/faq
+          +faq('Что такое Quantum System?','Quantum System – это 100% БЕСПЛАТНАЯ программа, которая может торговать на рынках бинарных опционов в 1 клик! Она полностью автоматизирована и выбирает для Вас выигрышные сделки!')(class='basic')
+          +faq('Сколько я могу зарабатывать с помощью этой программы?','Если в двух словах, то без границ. Но если принять во внимание технические аспекты, то это действительно зависит от того, на какую сумму Вы пополните свой счет. Большинство наших пользователей пополняют свой счет на $300 и зарабатывают около $800-1000 в день. Те, кто пополняет свой счет на сумму от $1,000, зарабатывают более $2,500 в день!')(class='money')
+          +faq('Каков минимальный депозит?','Естественно, Вам нужно внести деньги на свой торговый счет, прежде чем Вы сможете получать прибыль. Помните, что для того, чтобы начать зарабатывать деньги, нужны деньги. Вам необходимо внести на депозит КАК МИНИМУМ $250, но чем больше Вы внесете с самого начала, тем больше денег Вы заработаете сразу же! Помните, что Вы легко заработаете эти деньги в первый же день + даже больше! И Вы сможете снять эти деньги, когда захотите! Лично я бы порекомендовал Вам начать с $500 или больше, но $250 тоже будет неплохо!')(class='safe')
+          +faq('Как начать зарабатывать?','Есть несколько простых шагов, которые нужно сделать, прежде чем начать зарабатывать деньги. 1 шаг: посмотрите видео и зарегистрируйтесь, чтобы получить доступ к Quantum System! 2 шаг: Создайте учетную запись (аккаунт) у нашего рекомендуемого брокера, чтобы Вы смогли торговать. 3 шаг: Внесите деньги на свой счет. 4 шаг: Начните зарабатывать деньги прямо сейчас! Прямо в первый день!')(class='gears')
+          +faq('Нужно ли мне использовать кредитную карту для регистрации?','НИ В КОЕМ СЛУЧАЕ!. Программа Quantum System является 100% БЕСПЛАТНОЙ. Вам не нужна кредитная карта, счет в WebMoney или другая банковская информация при загрузке Quantum System! После того, как Вы зайдете в личный кабинет, мы порекомендуем Вам брокера бинарных опционов, которым Вы сможете пользоваться. Чтобы начать получать прибыль, Вам нужно внести деньги на депозит. Это ВАШИ деньги, которые вы просто вносите для того, чтобы торговать, и Вы можете снять их, когда захотите!')(class='cards')
+  section.dashed
+    .container
+      .row
+        .col-xs-12
+          h2.nomargin 
+            em
+              | 1 ШАГ : 
+              span Создайте учетную запись Quantum System прямо сейчас
+  section.registry-section-2
+    .container
+      .row
+        .hidden-sm.col-sm-1.offset-md-1.offset-lg-2.arr-left
+        .col-xs-12.col-sm-10.col-md-8.col-lg-6
+          form.reg-form
+            .row
+              .col-xs-12.col-sm-6
+                include pug/components/input
+                +input('text','firstname','Имя','true')(class='name')
+              .col-xs-12.col-sm-6
+                +input('text','lastname','Фамилия','true')(class='name')
+              .col-xs-12.col-sm-6
+                +input('email','email','Email','true')(class='mail')
+              .col-xs-12.col-sm-6
+                include pug/components/input-tel
+                +inputTel
+              .col-xs-12 
+                span.form__text
+                  | Нажимая "Получить доступ", вы подтверждаете, что ознакомились и полностью понимаете 
+                  a(href='/agreement.html' target='_blank' rel='noopener') Правила Пользования 
+                  | системой «Quantum System» и выражаете свое согласие с ними.
+                include pug/components/button
+                +button('Получить доступ')
+        .hidden-sm.col-sm-1.arr-right
+        .col-xs-12
+          h3 ЗАРЕГИСТРИРУЙТЕСЬ ВЫШЕ, ЧТОБЫ НАЧАТЬ ПРЯМО СЕЙЧАС!
+  section
+    .container
+      .row
+        .col-xs-12.col-sm-10.col-md-8.offset-sm-1.offset-md-2.text-center.grayscale
+          include pug/components/verify
+

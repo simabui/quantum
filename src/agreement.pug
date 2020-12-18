@@ -1,8 +1,8 @@
-extend pug/layout
+extends pug/layout
 
-block header
-  .col-xs-12.text-center
-    img(src='./images/logo.png' alt='Quantum System' class='logo text-center')
+block variables
+  - var titleVar = "Пользовательское соглашение - Quantum System"
+
 
 block content
   section.agreement-section

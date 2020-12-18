@@ -1,0 +1,5 @@
+mixin input(type,name,placeholder,required)
+  .input-group
+    .input-group-prepend
+      span.input-group-text(class!=attributes.class)
+    input(type=`${type}` name=name class='form-control' id=name placeholder=placeholder required=required)

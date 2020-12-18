@@ -10,7 +10,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: './src/agreement.pug' })],
+  plugins: [new HtmlWebpackPlugin({ template: './src/registration.pug' })],
   devServer: {
     stats: 'errors-only',
   },

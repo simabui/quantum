@@ -1,8 +1,7 @@
 extends pug/layout
 
-block header
-  .col-xs-12.text-center
-    img(src='./images/logo.png' alt='Quantum System' class='logo text-center')
+block variables
+  - var titleVar = 'Политика конфиденциальности - Quantum System'
 
 block content
   section.policy-section
@@ -90,4 +89,3 @@ block content
           p
             | Если у вас возникли вопросы касательно безопасности веб-сайта https://quantumsys.ru, нашего Заявления о политике конфиденциальности, его применения и/или нашей политики сбора и распространения информации, пожалуйста, свяжитесь с нами через службу поддержки по следующему электронному адресу: 
             a(href="mailto:evgeny@quantumsys.ru") evgeny@quantumsys.ru
-

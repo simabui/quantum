@@ -1,0 +1,11 @@
+mixin review(name,path,income)
+  .col-xs-12.col-sm-6.col-md-5.text-center(class!=attributes.class)
+    .video-review
+      img(src=`./images/${path}.png` class="poster" alt="poster")
+      video(poster=`./images/${path}.png` controls="true" class='video-review-player')
+        source(src=`./videos/${path}.mp4` type="video/mp4")
+    .user-name=name
+    .user-profit
+      | Общая прибыль: 
+      span=income
+

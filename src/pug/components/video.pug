@@ -1,10 +1,9 @@
-.container
-  .row
-    .col-xs-12
-      .video__wrapper
-        .video__embed
-          .video__volume
-            i(class='fas fa-5x fa-volume-up')
-            p Включить звук
-          video(width='620' height='370'  autoplay muted)
-            source(src='videos/video1.mp4' type='video/mp4')
+mixin video(src)
+  div(class!=attributes.class)
+    .video__wrapper
+      .video__embed
+        .video__volume
+          i(class='fas fa-5x fa-volume-up')
+          p Включить звук
+        video(width='620' height='370'  autoplay muted)
+          source(src=src type='video/mp4')
