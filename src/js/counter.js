@@ -28,7 +28,7 @@ const visitors = () => {
 };
 
 function counter() {
-  if (!document.querySelector('#CHAT-PAGE')) return;
+  if (!document.querySelector('.main-section') && !document.querySelector('.registry-section')) return;
   copies();
   visitors();
 }
