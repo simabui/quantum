@@ -1,4 +1,4 @@
-import { getData, setData } from './localStorage';
+import { getData, setData, removeData } from './localStorage';
 import { validate } from './validate';
 import API from '../api/agent';
 
@@ -22,7 +22,7 @@ const sendMainForm = () => {
     setData('form', { name, email });
 
     $body.addClass('unavailable');
-    document.location.replace('/dist/send.html');
+    document.location.replace('quantum/dist/send.html');
   });
 };
 
@@ -60,7 +60,8 @@ const sendRegForm = () => {
 
         API.Subscribe.subscribeUser(payload)
           .then(() => {
-            document.location.replace('/dist/thanks.html');
+            removeData('form');
+            document.location.replace('quantum/dist/thanks.html');
           })
           .catch(e => console.log(e))
           .finally(() => {
