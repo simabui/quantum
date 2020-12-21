@@ -22,7 +22,7 @@ const sendMainForm = () => {
     setData('form', { name, email });
 
     $body.addClass('unavailable');
-    document.location.replace('quantum/dist/send.html');
+    document.location.replace('https://simabui.github.io/quantum/dist/send.html');
   });
 };
 
@@ -61,7 +61,7 @@ const sendRegForm = () => {
         API.Subscribe.subscribeUser(payload)
           .then(() => {
             removeData('form');
-            document.location.replace('quantum/dist/thanks.html');
+            document.location.replace('https://simabui.github.io/quantum/dist/thanks.html');
           })
           .catch(e => console.log(e))
           .finally(() => {
