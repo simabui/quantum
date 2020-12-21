@@ -1,7 +1,13 @@
+import { getData, setData } from './localStorage';
+import { validate } from './validate';
+import API from '../api/agent';
+
 const $main = $('.main-section');
 const $register = $('.registry-section');
 const $register2 = $('.registry-section-2');
+const $body = $('body');
 
+//main.html page
 const sendMainForm = () => {
   if (!$main) return;
 
@@ -9,41 +15,61 @@ const sendMainForm = () => {
 
   form.on('submit', e => {
     e.preventDefault();
+
     const name = e.currentTarget.firstname.value;
     const email = e.currentTarget.email.value;
 
     setData('form', { name, email });
-    document.location.replace('/registration.html');
+
+    $body.addClass('unavailable');
+    document.location.replace('/dist/send.html');
   });
 };
 
-sendMainForm();
-
+// send.html page
 const sendRegForm = () => {
   if (!$register && !$register2) return;
-
-  const form = $('.reg-form');
   const { name = '', email = '' } = getData('form');
 
-  form.each(function () {
+  const $forms = $('.reg-form');
+
+  $forms.each(function () {
     $(this)[0].firstname.value = name;
     $(this)[0].email.value = email;
   });
 
-  form.on('submit', e => {
-    e.preventDefault();
-    document.location.replace('/thanks.html');
+  // submit listener
+  $forms.each(function () {
+    $(this).on('submit', e => {
+      e.preventDefault();
+
+      const isValidated = validate(e.target);
+
+      if (isValidated) {
+        const inputs = $(e.target).find('inputs');
+
+        const { firstname, lastname, email, phoneNumber } = inputs.context;
+        const payload = {
+          firstname: firstname.value,
+          lastname: lastname.value,
+          email: email.value,
+          phone: phoneNumber.value,
+        };
+
+        $body.addClass('unavailable');
+
+        API.Subscribe.subscribeUser(payload)
+          .then(() => {
+            document.location.replace('/dist/thanks.html');
+          })
+          .catch(e => console.log(e))
+          .finally(() => {
+            $body.removeClass('unavailable');
+          });
+      }
+    });
   });
 };
 
+sendMainForm();
 sendRegForm();
-
-function getData(name) {
-  const data = localStorage.getItem(name);
-  return JSON.parse(data) || '';
-}
-
-function setData(name, data) {
-  const dataJSON = JSON.stringify(data);
-  localStorage.setItem(name, dataJSON);
-}

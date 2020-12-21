@@ -1,3 +1,3 @@
 mixin inputTel()
   .input-group
-    input( type="tel" class="form-control input-tel" required='true')
+    input( type="tel" class="form-control input-tel" name='phoneNumber' data-val-length="Номер телефона должно быть не менее 7 символов и не больше 255." data-val-length-max="255" data-val-length-min="7" data-val-required="Поле 'Номер телефона' не задано" aria-required="true")

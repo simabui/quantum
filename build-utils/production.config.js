@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const CssUrlRelativePlugin = require('css-url-relative-plugin');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
   module: {
@@ -41,17 +40,9 @@ module.exports = {
       canPrint: true,
     }),
     new HtmlWebpackPlugin({
-      filename: 'main.html',
-      template: './src/main.pug',
+      filename: 'registration.html',
+      template: './src/registration.pug',
       scriptLoading: 'defer',
-      minify: {
-        collapseWhitespace: true,
-        removeComments: true,
-        removeRedundantAttributes: true,
-        removeScriptTypeAttributes: true,
-        removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true,
-      },
     }),
     new HtmlWebpackPlugin({
       filename: 'agreement.html',
@@ -80,8 +71,8 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      filename: 'registration.html',
-      template: './src/registration.pug',
+      filename: 'send.html',
+      template: './src/send.pug',
       scriptLoading: 'defer',
       minify: {
         collapseWhitespace: true,
@@ -103,20 +94,6 @@ module.exports = {
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true,
-      },
-    }),
-    new FaviconsWebpackPlugin({
-      logo: './src/images/favicon/favicon.png',
-      icons: {
-        android: false,
-        appleIcon: false,
-        appleStartup: false,
-        favicons: true,
-        firefox: false,
-        opengraph: false,
-        twitter: false,
-        yandex: false,
-        windows: false,
       },
     }),
   ],

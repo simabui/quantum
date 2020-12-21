@@ -1,7 +1,6 @@
 block variables
   - var titleVar = "Добро пожаловать! - Quantum System"
 
-<!DOCTYPE html>
 html(lang="ru")
   head
     meta(charset="UTF-8")
@@ -23,27 +22,7 @@ html(lang="ru")
             .col-xs-12.text-center
               img(src='./images/logo.png' alt='Quantum System' class='logo text-center')
     block content
-      section.main-section
-        .container
-          .row
-            include components/video
-            +video('videos/video1.mp4')(class='col-xs-12')
-          form.main-form
-            .row
-              .col-xs-12.col-sm-5.col-md-4.offset-sm-1.offset-md-2
-                include components/input
-                +input('test','firstname','Введите ваше имя','true')(class='name')
-              .col-xs-12.col-sm-5.col-md-4
-                +input('email','email','Действующий e-mail','true')(class='mail')
-              .col-xs-12.col-sm-10.offset-sm-1.col-md-8.offset-md-2
-                include components/button
-                +button('ДА! Я ХОЧУ ПОЛУЧИТЬ VIP ДОСТУП К QUANTUM SYSTEM ПРЯМО СЕЙЧАС')
-          .spacer
-            .row
-              .col-xs-12.col-sm-10.col-md-8.offset-sm-1.offset-md-2.text-center
-                include components/verify
-      block counter
-        include components/counter
+    block counter
     block footer
       include components/footer
 

@@ -105,20 +105,6 @@ module.exports = env =>
               },
             ],
           },
-          {
-            test: [
-              path.join(__dirname, '/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js'),
-              path.join(__dirname, '/node_modules/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js'),
-            ],
-            use: [
-              {
-                loader: 'imports-loader',
-                options: {
-                  additionalCode: 'var define = false;',
-                },
-              },
-            ],
-          },
         ],
       },
       plugins: [new CleanWebpackPlugin()],
